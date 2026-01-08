@@ -14,7 +14,7 @@ function multiply(num1, num2) {
 
 function divide(num1, num2) {
   if (num2 === 0) {
-    throw new Error("Error: Division by zero");
+    return "Error: Division by zero";
   }
   return num1 / num2;
 }
@@ -35,31 +35,27 @@ function calculator() {
           const a = Number(num1);
           const b = Number(num2);
 
-          try {
-            let result;
-            switch (operation) {
-              case "add":
-                result = add(a, b);
-                break;
-              case "subtract":
-                result = subtract(a, b);
-                break;
-              case "multiply":
-                result = multiply(a, b);
-                break;
-              case "divide":
-                result = divide(a, b);
-                break;
-              default:
-                console.log("Invalid operation");
-                rl.close();
-                return;
-            }
-            console.log("Result:", result);
-          } catch (error) {
-            console.log(error.message);
+          let result;
+          switch (operation) {
+            case "add":
+              result = add(a, b);
+              break;
+            case "subtract":
+              result = subtract(a, b);
+              break;
+            case "multiply":
+              result = multiply(a, b);
+              break;
+            case "divide":
+              result = divide(a, b);
+              break;
+            default:
+              console.log("Invalid operation");
+              rl.close();
+              return;
           }
 
+          console.log("Result:", result);
           rl.close();
         }
       );
