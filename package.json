@@ -1,11 +1,10 @@
 {
-  "name": "Design-a-simple-calculator-using-Node.js",
+  "name": "simple-calculator-nodejs",
   "version": "1.0.0",
-  "description": "Starter package.json template",
   "main": "main.js",
   "scripts": {
-    "test": "jest 2> output.txt --forceExit  --detectOpenHandles",
-    "start": "node main.js &"
+    "start": "node main.js",
+    "test": "jest > output.txt 2>&1 --forceExit --detectOpenHandles"
   },
   "repository": {
     "type": "git",
