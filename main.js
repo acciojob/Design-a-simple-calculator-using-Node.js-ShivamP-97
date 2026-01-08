@@ -1,22 +1,17 @@
+// Calculator program in Node.js
 
-const readline = require("readline");
-
-// Function to perform addition
 function add(num1, num2) {
   return num1 + num2;
 }
 
-// Function to perform subtraction
 function subtract(num1, num2) {
   return num1 - num2;
 }
 
-// Function to perform multiplication
 function multiply(num1, num2) {
   return num1 * num2;
 }
 
-// Function to perform division
 function divide(num1, num2) {
   if (num2 === 0) {
     throw new Error("Error: Division by zero");
@@ -24,8 +19,9 @@ function divide(num1, num2) {
   return num1 / num2;
 }
 
-// Main program
 function calculator() {
+  const readline = require("readline");
+
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -41,7 +37,6 @@ function calculator() {
 
           try {
             let result;
-
             switch (operation) {
               case "add":
                 result = add(a, b);
@@ -60,7 +55,6 @@ function calculator() {
                 rl.close();
                 return;
             }
-
             console.log("Result:", result);
           } catch (error) {
             console.log(error.message);
@@ -72,7 +66,5 @@ function calculator() {
     });
   });
 }
-
-calculator();
 
 module.exports = { add, subtract, multiply, divide };
